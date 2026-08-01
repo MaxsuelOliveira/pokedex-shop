@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=VT323&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    position: relative;
+    font-family: "Raleway", serif;
+    color: #526174;
+    background:
+        radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.9), transparent 24%),
+        radial-gradient(circle at 82% 18%, rgba(188, 215, 235, 0.55), transparent 20%),
+        linear-gradient(180deg, #edf2f7 0%, #dbe4ec 100%);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.2;
+    background-image:
+        linear-gradient(rgba(126, 144, 167, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(126, 144, 167, 0.08) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent 78%);
+}
+
+#app {
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(93, 112, 120, 0.76);
+}
+
+select {
+    appearance: none;
+    background-image:
+        linear-gradient(45deg, transparent 50%, rgba(20, 48, 56, 0.55) 50%),
+        linear-gradient(135deg, rgba(20, 48, 56, 0.55) 50%, transparent 50%);
+    background-position:
+        calc(100% - 20px) calc(50% - 3px),
+        calc(100% - 13px) calc(50% - 3px);
+    background-size: 7px 7px, 7px 7px;
+    background-repeat: no-repeat;
+    padding-right: 3rem;
+}
+
+.pokemon-float {
+    animation: pokemonFloat 4.6s ease-in-out infinite;
+    transform-origin: center bottom;
+}
+
+.pokemon-float-alt {
+    animation: pokemonFloatAlt 5.4s ease-in-out infinite;
+    transform-origin: center bottom;
+}
+
+.stage-glow {
+    position: relative;
+}
+
+.stage-glow::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    width: 58%;
+    height: 22px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(74, 92, 116, 0.24) 0%, rgba(20, 48, 56, 0) 74%);
+    filter: blur(6px);
+}
+
+.device-frame {
+    border-radius: 38px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(238, 243, 248, 0.98) 100%);
+    padding: 10px;
+    box-shadow: 0 24px 52px rgba(89, 105, 127, 0.18);
+}
+
+.device-screen {
+    border-radius: 30px;
+    background: linear-gradient(180deg, #fdfefe 0%, #f1f5fa 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.shop-collage-grid {
+    position: relative;
+    display: grid;
+    width: min(100%, 1180px);
+    min-height: 420px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+}
+
+.shop-collage-card {
+    transform-origin: center;
+    animation: posterFloat 7s ease-in-out infinite;
+}
+
+.hero-panel-enter {
+    opacity: 0;
+    transform: translateY(26px) scale(0.98);
+    animation: heroPanelEnter 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.splash-overlay {
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.34), rgba(81, 104, 130, 0.3));
+    backdrop-filter: blur(12px);
+}
+
+.splash-panel {
+    animation: splashPanelEnter 760ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.filter-card-enter {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: filterPanelEnter 520ms ease forwards;
+}
+
+.pagination-enter {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: paginationEnter 480ms ease forwards;
+}
+
+.modal-sheet-enter {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+    animation: modalSheetEnter 420ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.shop-collage-card-1 {
+    transform: translateY(12px) rotate(-16deg);
+}
+
+.shop-collage-card-2 {
+    transform: translateY(-8px) rotate(-10deg);
+}
+
+.shop-collage-card-3 {
+    transform: translateY(16px) rotate(8deg);
+}
+
+.shop-collage-card-4 {
+    transform: translateY(-10px) rotate(14deg);
+}
+
+.shop-collage-card-5 {
+    transform: translateY(8px) rotate(-8deg);
+}
+
+.shop-collage-card-6 {
+    transform: translateY(26px) rotate(10deg);
+}
+
+.shop-collage-card-7 {
+    transform: translateY(-18px) rotate(-12deg);
+}
+
+.shop-collage-card-8 {
+    transform: translateY(18px) rotate(12deg);
+}
+
+.shop-collage-card-9 {
+    transform: translateY(-12px) rotate(-6deg);
+}
+
+@keyframes posterFloat {
+
+    0%,
+    100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -8px;
+    }
+}
+
+@keyframes heroPanelEnter {
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes splashPanelEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes filterPanelEnter {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes paginationEnter {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalSheetEnter {
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pokemonFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-1deg) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(1.2deg) scale(1.02);
+    }
+}
+
+@keyframes pokemonFloatAlt {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0.8deg) scale(1);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(-1deg) scale(1.025);
+    }
+}
+
+@media (max-width: 767px) {
+    body::before {
+        opacity: 0.14;
+        background-size: 36px 36px;
+    }
+
+    .device-frame {
+        padding: 8px;
+        border-radius: 30px;
+    }
+
+    .device-screen {
+        border-radius: 24px;
+    }
+}
+
+::selection {
+    background: rgba(242, 106, 75, 0.28);
+    color: #143038;
+}
