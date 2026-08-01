@@ -68,7 +68,7 @@ Padrao visual predominante:
 1. index.html carrega src/main.jsx.
 2. src/main.jsx importa, nesta ordem, pokemon-seed.js, storage.js, services.js e store.js.
 3. O store inicializa e dispara refreshCatalog().
-4. React monta App dentro de HashRouter.
+4. React monta App e resolve a rota atual a partir de window.location.hash.
 5. Hooks observam o snapshot e reagem a cada atualizacao do store.
 
 ## Modelo de estado
@@ -96,7 +96,7 @@ Principais grupos de estado:
 
 ## Decisoes tecnicas importantes
 
-- HashRouter foi mantido para simplificar hospedagem estatica sem configuracao adicional de rewrite.
+- O roteamento usa hash local sem dependencia externa para simplificar hospedagem estatica sem configuracao adicional de rewrite.
 - Os imports internos de src ficaram sem extensao para desacoplar a camada React de futuras renomeacoes.
 - Os modulos em assets/js permanecem em .js porque sao modulos de dominio e bootstrap, nao componentes JSX.
 - O build continua estatico e compativel com Netlify.

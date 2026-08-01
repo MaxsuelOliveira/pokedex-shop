@@ -27,7 +27,6 @@ Marketplace frontend de Pokemons com catalogo remoto, fallback local, autenticac
 
 - React
 - Vite
-- React Router DOM
 - Tailwind CSS
 - PokeAPI
 - localStorage

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter } from "react-router-dom";
 import "../assets/js/core/services.js";
 import "../assets/js/core/storage.js";
 import "../assets/js/core/store.js";
@@ -113,10 +112,6 @@ createBootSplash();
 
 ReactDOM.createRoot(document.getElementById("app")).render(
   <React.StrictMode>
-    <HashRouter
-      future={{ v7_relativeSplatPath: true, v7_startTransition: true }}
-    >
-      <App />
-    </HashRouter>
+    <App />
   </React.StrictMode>,
 );
